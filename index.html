@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title"></title>
+
+    <style>
+        body
+        {
+            background-image: url('https://t3.ftcdn.net/jpg/04/12/82/16/360_F_412821610_95RpjzPXCE2LiWGVShIUCGJSktkJQh6P.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;        }
+    </style>
+</head>
+
+<body>
+    <BR>
+    <div class="container">
+        <h1 style="color: black; text-align: left; margin-top: 2ch; text-align: center;"><b><U>WALMART VISITORS COUNTER</U></b></h1>
+
+        <div class="row">
+            <div class="col-6">
+                <br><br><br><br><br><br>
+                <img src="https://static.startuptalky.com/2021/08/Walmart-Business-Model-StartupTalky-2.jpg" alt="image is broken" height="300" width="500">
+            
+            </div>
+            <div class="col-6">
+                <br><br>
+                <form>
+                    <div class="mb-4 mt-4">
+                        <label><b>Gender</b></label>
+                    
+                <select class="form-control" id="Gender" 
+                style="width: 80%;">
+                    
+                
+                    <option value="0">--Select Gender--</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+                <span id="errGender" style="color: red;">
+
+                </span>
+            </div>
+            <div class="mb-4 mt-4">
+                <label><b>--AGE GROUP--</b></label>
+                <select class="form-control" id="ageGroup"
+                style="width: 80%;">
+                    <option value="0">--Select AGE GROUP--</option>
+                    <option value="1">KIDS(1-12)Years</option>
+                    <option value="2">TEEN(13-19)Years</option>
+                    <option value="3">YOUNGSTER(20-30)Years</option>
+                    <option value="4">ADULT(31-59)Years</option>
+                    <option value="5">OLD(60-100)Years</option>
+                </select>
+                <span id="errageGroup" style="color: red;">
+
+                </span>
+                </div>
+                <p>
+                    <div class="mb-4 mt-4">
+                        <label><b>Comment</b></label>
+                        <textarea class="form-control"  id="Comment" style="width: 80%;"></textarea>
+                        <span id="errComment" style="color: red;">
+                        </span>
+                    </div>
+                    <button type="button" class="btn-primary" style="width: 80%;" onclick="validateform()" >Submit</button>
+                </p>
+                
+            </form>
+
+            </div>
+        </div>
+    </div>
+  <script>
+    function validateform()
+    {
+        //validation of gender field
+        var Gender =document.getElementById('Gender').value
+        if(Gender==0) 
+        {
+            document.getElementById('errGender').innerHTML ='plese select Gender'
+            return false
+        }
+        else
+        
+            {
+                document.getElementById('errGender').innerHTML = ''
+            }
+            
+
+            var ageGroup =document.getElementById('ageGroup').value
+        if(ageGroup==0) 
+        {
+            document.getElementById('errageGroup').innerHTML ='plese select age Group'
+            return false
+        }
+        else
+        
+            {
+                document.getElementById('errageGroup').innerHTML = ''
+            }
+            
+            //comment
+            var Comment= document.getElementById
+            ('Comment').value
+            var regxComment = /^[A-Za-z0-9]+$/ //regular expression
+            
+
+
+
+            if(Comment)
+            {
+                var validComment=Comment.match(regxComment)
+                if(!validComment)
+                {
+                    document.getElementById('errComment').innerHTML='please enter valid comment'
+                    
+                }
+                else
+                {
+                    document.getElementById('errComment').innerHTML=''
+                }
+            }
+            else
+            {
+                document.getElementById('errComment').innerHTML='plz enter something'
+            }
+            
+        }
+     
+        
+       
+
+  </script>
+  
+    
+</body>
+</html>
